@@ -31,19 +31,24 @@ In your `config/app.php` add `hqq\scenario\ScenarioServiceProvider::class,` to t
 ## Example Model
 ```php
 <?php namespace App;
+
 use Illuminate\Database\Eloquent\Model;
-class Users extends Model {
-	public static $rules = [
-		"name" => ["required"],
-		"email" => ["required|email"],
-		"password" => ["required"],
-		"remember_token" => [""],
-		"created_at" => ["required"],
-		"updated_at" => ["required"]
-	];
-	protected $table = "users";
-	protected $fillable = ["name","email","password","remember_token","created_at","updated_at"];
-}```
+
+class Units extends Model {
+	 public static $rules = [
+	 'phone'       => ['required|numeric|digits:11','mostafa'],
+	 'address'     => ['required', 'mehrdad'],
+	 'services'    => ['required'],
+	 'website'     => ['required|regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
+	 'email'       => ['required|email'],
+	 'description' => ['required', 'mostafa'],
+	 'about_us'    => ['required'],
+	 'picture'     => ['required|image|mimes:jpg,png,gif,jpeg|max:1000', 'image']
+ ];
+	protected $table = "units";
+	protected $fillable = ['picture', 'phone', 'address', 'services', 'website', 'email', 'description', 'about_us'];
+}
+```
 
 ## Usage Code
 
