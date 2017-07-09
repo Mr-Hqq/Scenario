@@ -1,3 +1,5 @@
+#Scenario For Laravel
+
 - This package compatible with Laravel `>=5`
 
 - This package help you out to make model from database and set scenario for it.
@@ -28,12 +30,12 @@ In your `config/app.php` add `hqq\scenario\ScenarioServiceProvider::class,` to t
 #### `Scenarioo::setScenario('image')`
 #### `Scenarioo::Rules()`
 ```php
-		Scenarioo::setRules(AllowedUnits::$rules);
-		Scenarioo::setScenario('image');
-		$validation = \Validator::make($request->all(),Scenarioo::Rules());
-		if($validation->fails()){
-			return \Redirect::back()->withErrors($validation->errors())->withInput();
-		}
+Scenarioo::setRules(AllowedUnits::$rules);
+Scenarioo::setScenario('image');
+$validation = \Validator::make($request->all(),Scenarioo::Rules());
+if($validation->fails()){
+	return \Redirect::back()->withErrors($validation->errors())->withInput();
+}
 ```
 ---
 
