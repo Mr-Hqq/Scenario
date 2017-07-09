@@ -37,7 +37,7 @@ class MakeRules {
 						}
 						$rules .= 'integer|digits:' . $digits . '|';
 					}
-					if(strpos(strtolower($row['Type']),'varchar')){
+					if(strpos($row['Type'], 'varchar') !== false){
 						$size = substr($row['Type'],strpos($row['Type'], '(') + 1);
 						$size = substr($size,0,strpos($size, ')'));
 						$rules .= "size:".$size."|";
