@@ -39,7 +39,8 @@ class MakeRules {
 					}
 					if(strpos(strtolower($row['Type']),'varchar')){
 						$size = substr($row['Type'],strpos($row['Type'], '(') + 1);
-						$size = substr($digits,0,strpos($digits, ')'));
+						$size = substr($size,0,strpos($size, ')'));
+						$rules .= "size:".$size."|";
 					}
 					if(strpos($row['Field'], 'website') ||
 					   strpos($row['Field'], 'site') ||
