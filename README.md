@@ -24,7 +24,10 @@ In your `config/app.php` add `hqq\scenario\ScenarioServiceProvider::class,` to t
 ```
 
 <a name="usage"></a>
-## Usage
+## Usage cmodel
+#### in artisan console write
+#### `php artisan make:cmodel table_name`
+## Usage Code
 
 #### `Scenarioo::setRules(AllowedUnits::$rules)`
 #### `Scenarioo::setScenario('image')`
