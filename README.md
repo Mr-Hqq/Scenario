@@ -29,7 +29,8 @@ In your `config/app.php` add `hqq\scenario\ScenarioServiceProvider::class,` to t
 #### `php artisan make:cmodel table_name`
 
 ## Example Model
-`<?php namespace App;
+```php
+<?php namespace App;
 use Illuminate\Database\Eloquent\Model;
 class Users extends Model {
 	public static $rules = [
@@ -42,7 +43,7 @@ class Users extends Model {
 	];
 	protected $table = "users";
 	protected $fillable = ["name","email","password","remember_token","created_at","updated_at"];
-}`
+}```
 
 ## Usage Code
 
