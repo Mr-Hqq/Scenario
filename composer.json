@@ -1,0 +1,24 @@
+{
+    "name": "hqq/scenario",
+    "description": "A Package for set Scenario in Laravel",
+    "license": "MIT",
+    "keyword": ["laravel", "model", "cmodel", "custom model", "scenario", "setScenario"],
+    "authors": [
+        {
+            "name": "Mostafa",
+            "email": "dr.clon3r@yahoo.com"
+        },
+        {
+            "name": "Mehrdad Akbari",
+            "email": "akbarimehrdad87@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "hqq\\scenario\\": "src/"
+        }
+    }
+
+}
