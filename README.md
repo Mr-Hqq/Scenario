@@ -56,7 +56,7 @@ class Units extends Model {
 #### `Scenarioo::setScenario('image')`
 #### `Scenarioo::Rules()`
 ```php
-Scenarioo::setRules(AllowedUnits::$rules);
+Scenarioo::setRules(Units::$rules);
 Scenarioo::setScenario('image');
 $validation = \Validator::make($request->all(),Scenarioo::Rules());
 if($validation->fails()){
