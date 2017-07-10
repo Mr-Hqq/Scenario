@@ -66,4 +66,4 @@ if($validation->fails()){
 ---
 
 ## License ##
--  This package was created and modified by Mostafa Haqiqi for Laravel >= 5 and is released under the MIT License.
+-  This package was created and modified by Mostafa Haqiqi && Mehrdad Akbari for Laravel >= 5 and is released under the MIT License.
