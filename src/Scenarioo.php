@@ -31,5 +31,6 @@ class Scenarioo {
 				$rl[array_search($rule,self::getRules())] = $rule[0];
 			}
 		}
+		return $rl;
 	}
 }
