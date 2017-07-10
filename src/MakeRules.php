@@ -19,7 +19,7 @@ class MakeRules {
 					if($row['Null'] == 'NO'){
 						$rules .= '["required|';
 					}elseif($row['Null'] == 'YES'){
-						$rules .= '[';
+						$rules .= '["';
 					}
 					if(strpos($row['Type'],'int')){
 						$digits = '';
