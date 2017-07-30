@@ -1,12 +1,4 @@
 <?php
-namespace  hqq\scenario;
-
-/**
- * Created by PhpStorm.
- * User: bikooch
- * Date: 7/8/2017
- * Time: 10:57 AM
- */
 class Scenarioo {
 	protected static $scenario;
 	protected static $rules;
@@ -24,12 +16,11 @@ class Scenarioo {
 	}
 	public static function Rules() {
 		$rl = [];
-		foreach(self::getRules() as $rule){
-			if(!isset($rule[1]) || $rule[1] == self::getScenario()){
-				$rl[array_search($rule,self::getRules())] = $rule[0];
-			}elseif(!isset($rule[1])){
-				$rl[array_search($rule,self::getRules())] = $rule[0];
-			}
+
+		foreach(self::getRules() as $rule => $item){
+			if(!isset($item[1]) || $item[1] == self::getScenario()){
+				$rl[$rule] = $item[0];
+			 }
 		}
 		return $rl;
 	}
