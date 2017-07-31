@@ -1,4 +1,5 @@
 <?php
+namespace  hqq\scenario;
 class Scenarioo {
 	protected static $scenario;
 	protected static $rules;
