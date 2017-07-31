@@ -1,7 +1,7 @@
 <?php
 namespace  hqq\scenario;
 class Scenarioo {
-	protected static $scenario;
+	protected static $scenario = [];
 	protected static $rules;
 	static  function getRules() {
 		return self::$rules;
@@ -19,10 +19,12 @@ class Scenarioo {
 		$rl = [];
 
 		foreach(self::getRules() as $rule => $item){
-			if(!isset($item[1]) || $item[1] == self::getScenario()){
-				$rl[$rule] = $item[0];
-			 }
+			if(count($item[0]) > 0){
+				if(!isset($item[1]) || count(array_diff ($item[1], self::getScenario())) <= 0){
+					$rl[$rule] = $item[0];
+				}
+			}
 		}
 		return $rl;
 	}
-}
+}	
