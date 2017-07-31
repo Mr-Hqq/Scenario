@@ -35,16 +35,16 @@ In your `config/app.php` add `hqq\scenario\ScenarioServiceProvider::class,` to t
 use Illuminate\Database\Eloquent\Model;
 
 class Units extends Model {
-	 public static $rules = [
-	 'phone'       => ['required|numeric|digits:11','mostafa'],
-	 'address'     => ['required', 'mehrdad'],
-	 'services'    => ['required'],
-	 'website'     => ['required|regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
-	 'email'       => ['required|email'],
-	 'description' => ['required', 'mostafa'],
-	 'about_us'    => ['required'],
-	 'picture'     => ['required|image|mimes:jpg,png,gif,jpeg|max:1000', 'image']
- ];
+	static $rules = [
+		'phone'       => ['required|numeric|digits:11'],
+		'address'     => ['required'],
+		'services'    => ['required'],
+		'website'     => ['required|regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
+		'email'       => ['required|email',['mostafa']],
+		'description' => ['required',['mostafa']],
+		'about_us'    => ['required', ['mehrdad']],
+		'picture'     => ['required|image|mimes:jpg,png,gif,jpeg|max:1000', ['store','mostafa']]
+	];
 	protected $table = "units";
 	protected $fillable = ['picture', 'phone', 'address', 'services', 'website', 'email', 'description', 'about_us'];
 }
@@ -53,11 +53,11 @@ class Units extends Model {
 ## Usage Code
 
 #### `Scenarioo::setRules(AllowedUnits::$rules)`
-#### `Scenarioo::setScenario('image')`
+#### `Scenarioo::setScenario(['mehrdad', 'mostafa','store'])`
 #### `Scenarioo::Rules()`
 ```php
 Scenarioo::setRules(Units::$rules);
-Scenarioo::setScenario('image');
+Scenarioo::setScenario(['mehrdad', 'mostafa','store']);
 $validation = \Validator::make($request->all(),Scenarioo::Rules());
 if($validation->fails()){
 	return \Redirect::back()->withErrors($validation->errors())->withInput();
