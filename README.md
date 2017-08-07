@@ -53,7 +53,7 @@ class Units extends Model {
 ## Usage Code
 
 #### `Scenarioo::setRules(AllowedUnits::$rules)`
-#### `Scenarioo::setScenario(['mehrdad', 'mostafa','store'])`
+#### `Scenarioo::setScenario(['store','mostafa'])`
 #### `Scenarioo::Rules()`
 ```php
 Scenarioo::setRules(Units::$rules);
