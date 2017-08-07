@@ -57,7 +57,7 @@ class Units extends Model {
 #### `Scenarioo::Rules()`
 ```php
 Scenarioo::setRules(Units::$rules);
-Scenarioo::setScenario(['mehrdad', 'mostafa','store']);
+Scenarioo::setScenario(['store','mostafa']);
 $validation = \Validator::make($request->all(),Scenarioo::Rules());
 if($validation->fails()){
 	return \Redirect::back()->withErrors($validation->errors())->withInput();
