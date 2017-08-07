@@ -17,14 +17,14 @@ class Scenarioo {
 	}
 	public static function Rules() {
 		$rl = [];
-
 		foreach(self::getRules() as $rule => $item){
-			if(count($item[0]) > 0){
-				if(!isset($item[1]) || count(array_diff ($item[1], self::getScenario())) <= 0){
-					$rl[$rule] = $item[0];
-				}
+			if(!isset($item[1])){
+				$rl[$rule] = $item[0];
+			}
+			if($item[1] == self::getScenario()){
+				$rl[$rule] = $item[0];
 			}
 		}
 		return $rl;
 	}
-}	
+}
